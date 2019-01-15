@@ -1,0 +1,5 @@
+training:
+    resource: "@TrainingBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
