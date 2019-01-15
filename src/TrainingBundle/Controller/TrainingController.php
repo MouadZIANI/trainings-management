@@ -15,9 +15,7 @@ class TrainingController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('TrainingBundle:Training:index.html.twig', array(
-            // ...
-        ));
+        return $this->render('TrainingBundle:training:index.html.twig');
     }
 
 }
