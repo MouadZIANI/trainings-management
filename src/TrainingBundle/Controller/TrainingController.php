@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class TrainingController extends Controller
 {
     /**
-     * @Route("/index")
+     * @Route("/index", name="trainings_index")
      */
     public function indexAction()
     {

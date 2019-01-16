@@ -1,5 +1,9 @@
+# Routing for FosUserBundle
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+# Routing for AppBundle
 training:
     resource: "@TrainingBundle/Controller/"
     type:     annotation
     prefix:   /
-
