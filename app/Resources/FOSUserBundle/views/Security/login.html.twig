@@ -1,0 +1,16 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+	<div class="page-single">
+		<div class="container">
+			<div class="row">
+				<div class="col col-login mx-auto">
+					<div class="text-center mb-6">
+						<img src="./demo/brand/tabler.svg" class="h-6" alt="">
+					</div>
+					{{ include('@FOSUser/Security/login_content.html.twig') }}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock fos_user_content %}

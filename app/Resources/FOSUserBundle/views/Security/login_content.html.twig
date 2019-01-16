@@ -1,0 +1,31 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<form class="card" action="{{ path("fos_user_security_check") }}" method="post">
+    {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+    <div class="card-body p-6">
+        <div class="card-title">Connexion</div>
+        {% include '@FOSUser/partials/_messages.html.twig' %}
+        <div class="form-group">
+            <label class="form-label">UserName</label>
+            <input type="text"class="form-control" id="username" name="_username" placeholder="UserName" value="{{ last_username }}" required="required" autocomplete="username" autofocus />
+        </div>
+        <div class="form-group">
+            <label class="form-label">
+                Mot de passe
+                <a href="#" class="float-right small">Mot de passe oublié ?</a>
+            </label>
+            <input type="password" class="form-control" id="password" name="_password" placeholder="Mot de passe" required="required"/>
+        </div>
+        <div class="form-group">
+            <label class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="remember_me" name="_remember_me" value="on" />
+                <span class="custom-control-label">Souviens-toi de moi</span>
+            </label>
+        </div>
+        <div class="form-footer">
+            <button type="submit" id="_submit" name="_submit" class="btn btn-primary btn-block">S'identifier</button>
+        </div>
+    </div>
+</form>

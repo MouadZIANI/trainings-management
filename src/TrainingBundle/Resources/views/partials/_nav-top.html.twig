@@ -15,15 +15,17 @@
                     <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
                         <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
                         <span class="ml-2 d-none d-lg-block">
-                            <span class="text-default">Mouad ZIANI</span>
-                            <small class="text-muted d-block mt-1">Administrateur</small>
+                            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                                <span class="text-default">{{ app.user.username }}</span>
+                                <small class="text-muted d-block mt-1">Administrateur</small>
+                            {% endif %}
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                         <a class="dropdown-item" href="#">
                             <i class="dropdown-icon fe fe-user"></i> Profile
                         </a>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}">
                             <i class="dropdown-icon fe fe-log-out"></i> Sign out
                         </a>
                     </div>
